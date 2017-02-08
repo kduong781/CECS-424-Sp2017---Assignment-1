@@ -6,9 +6,9 @@ Puzzles:
   1. Get out of the room. (Unlock the door with key)
   2. Get rid of your headache (Eat aspirin)
   3. Get out of house (through window with crowbar)  (Crowbar is hidden [must examine crowbar twice with no headache])
-  
-  
-  Walkthrough:
+
+
+Walkthrough:
   1. take key
   2. unlock door
   3. go south
@@ -21,5 +21,5 @@ Puzzles:
   10. examine crowbar
   11. go east
   
-  
-  The End
+
+The End
