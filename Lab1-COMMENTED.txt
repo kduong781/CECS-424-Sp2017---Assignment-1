@@ -1,0 +1,100 @@
+"CECS 424 - Lab 1" by Kevin Duong
+
+
+[Map
+
+								Bed  Room
+									|
+									|
+					Bathroom------Living Room---------Exit
+
+]
+
+
+[Headache is a boolean that checks if player has a headache]
+
+Headache is a truth state that varies. Headache is true.
+
+[Intro Message that displays when the game is started]
+When play begins:
+		say "You find yourself in a unfamiliar place after waking up on a stranger's bed. You have a huge headache and your first thought is to get out."
+
+[Creates bedroom and description of bedroom]
+The bedroom is a room. "You are in the bedroom. You can see a cabinet and some things on the desk. I think the living room is south of here. [if Headache is true] You currently have a huge headache and should look for some medicine. "[end if]
+
+[Creates door and defines property of door]
+The wood door is south of the bedroom and north of the living room.  The wood door is a door. The wood door is closed and locked. The matching key of the wood door is the key.
+
+[Creates living room and description of living room]
+The living room is a room. "You've entered the living room. In the living room, there is a sofa, coffee table and television. There seems to be something under the sofa. You can see a window. However, it seems to be barricaded with wood. IIt looks like it can be broken into. I think the bathroom is of here. [if Headache is true] Your head is hurting! You should search around for some medicine." [end if]
+
+
+[Initialize objects in living room]
+The crowbar is a object.
+The sofa is in the living room.
+The description of the sofa is "Sofa".
+
+
+[Definds a secret door]
+A secret door is a kind of door.
+A secret door can be revealed or unrevealed.
+A secret door is unrevealed.
+A secret door is closed.
+
+
+[Initialize window and properties of a window]
+The window is a secret door. The window is closed and locked. The window is east of the living room and west of the exit.
+The description of the window is "A barricaded window. It looks like it could be broken into"
+
+
+[conditional statement for]
+Instead of looking under the sofa for the first time:
+	move the crowbar to the living room;
+	say "You find the crowbar! This might be able to break something.";
+	now the player is carrying the crowbar.
+
+[Conditional statement for getting out]
+Instead of examining crowbar at least twice:
+	say "[if Headache is true] My head hurts! I should find some way to stop the pain."; [end if]
+	if Headache is false:
+		say "You suddenly have a thought and learnt how to use this crowbar! You use it to break the barricaded window!";
+		Now the window is open.
+
+[Initialize key in bedroom]
+The key is in the bedroom.
+
+[Conditioanal statement for key]
+Before taking the key:
+	say "The key looks like it opens to somewhere important.";
+	continue the action.
+
+After taking the key, say "This might help open a door."
+
+The description of the key is "A shiny key."
+
+
+[Initialize bathroom and location]
+The bathroom is a room. The bathroom is west of the living room.
+
+The description of the bathroom is "You have entered the bathroom. You see a slightly opened medicine cabinet. [if Headache is true] You currently still have a headache! You should check the medicine cabinet." [end if]
+
+[Initialize aspirin in bathroom]
+The aspirin is in the bathroom. The aspirin is edible.
+
+The description of the aspirin is "Medication used to reduce pain."
+
+[Conditional statement for aspirin to get rid of headache]
+Before taking the aspirin:
+	say "This might be able to get rid of my headache. I should try eating it.";
+	continue the action.
+
+After eating the aspirin:
+	 say "My headache is gone!";
+	Now Headache is false.
+
+[Initialize room]
+The exit is a room. The exit is east of the window. The description of exit is "You are in the middle of the window. Try going east again!"
+
+[If player goes to exxit, end game]
+Instead of going in the exit:
+	 end the story saying "Congratulations! You have succesfully exited the House! The End!."

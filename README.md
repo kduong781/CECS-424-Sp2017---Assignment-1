@@ -20,6 +20,7 @@ Walkthrough:
   9. examine crowbar
   10. examine crowbar
   11. go east
-  
+  12. go east
+
 
 The End
